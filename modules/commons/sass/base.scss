@@ -1,0 +1,44 @@
+// General Settings
+
+html {
+    height: 100%;
+    overflow: hidden;
+
+    body {
+        height: 100%;
+        background-image: url("../../img/background.jpg");
+        background-size: 100% 100%;
+        padding: 1em;
+        font-size: 15px;
+        font-family: 'Open Sans', sans-serif;
+        overflow: auto;
+    }
+}
+
+.widget {
+    & > div {
+        border-radius: 0.3em;
+        overflow: hidden;
+        max-width: 400px;
+        margin: 1em auto;
+    }
+}
+
+.waiting {
+    height: 1em;
+    min-width: 50px;
+    animation: waiting 1s ease-in infinite;
+}
+@keyframes waiting {
+    0% {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+
+    50% {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    100% {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+}

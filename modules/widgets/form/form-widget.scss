@@ -1,0 +1,120 @@
+[ui-view=form] {
+    & > div {
+        border-radius: 0.5em;
+        box-shadow: 0 0 20px $shadow1;
+        color: $brown2;
+
+        .content {
+            padding: 1em 1.5em;
+            background-color: $white1;
+
+            .field {
+                margin-bottom: 1em;
+
+                span{
+                    margin-top: 0.3em;
+                    display: inline-block;
+                }
+
+                .ui-select-container{
+                    span{
+                        display: inline!important;
+                        margin-top: 0!important;
+                    }
+
+                    .ui-select-match-item{
+                        background-color: $green2;
+                        -webkit-appearance: none;
+                        color: $white1;
+                        padding: 0.5em 1em;
+                        display: inline-block!important;
+                        border-radius: 0.5em;
+                    }
+                }
+
+                input,
+                textarea {
+                    border-radius: 0.3em;
+                    border: 2px solid $brown3;
+                    padding: 0.5em 1em;
+                    display: block;
+                    width: 100%;
+
+                    &[type=search]{
+                        margin: 0.2em 0 0.6em;
+                        border: none;
+                    }
+                }
+
+                ::-webkit-input-placeholder {
+                    /* WebKit, Blink, Edge */
+                    color: $brown1;
+                }
+
+                :-moz-placeholder {
+                    /* Mozilla Firefox 4 to 18 */
+                    color: $brown1;
+                    opacity: 1;
+                }
+
+                ::-moz-placeholder {
+                    /* Mozilla Firefox 19+ */
+                    color: $brown1;
+                    opacity: 1;
+                }
+
+                :-ms-input-placeholder {
+                    /* Internet Explorer 10-11 */
+                    color: $brown1;
+                }
+
+                ::-ms-input-placeholder {
+                    /* Microsoft Edge */
+                    color: $brown1;
+                }
+            }
+        }
+
+        .footer {
+            display: flex;
+            background-color: $brown6;
+            padding: 1.5em;
+
+            .left {
+                flex: 1;
+
+                input[type=checkbox] {
+                    opacity: 0;
+                    position: absolute;
+                    width: 21px;
+                    height: 21px;
+                    margin: 0;
+                }
+
+                input[type=checkbox] + label {
+                    height: 21px;
+                    width: 21px;
+                    display: inline-block;
+                    padding: 0;
+                    margin: 0;
+                    background-position: -113px -5px;
+                    vertical-align: bottom;
+                }
+
+                input[type=checkbox]:checked + label {
+                    background-position: -113px -34px;
+                }
+            }
+
+            button {
+                color: $white1;
+                border: 1px solid $red2;
+                background: #ea6f50;
+                background: -moz-linear-gradient(top, #ea6f50 0%, #e05f35 100%);
+                background: -webkit-linear-gradient(top, #ea6f50 0%,#e05f35 100%);
+                background: linear-gradient(to bottom, #ea6f50 0%,#e05f35 100%);
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=  '#ea6f50', endColorstr='#e05f35',GradientType=0 );
+            }
+        }
+    }
+}

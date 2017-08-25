@@ -1,0 +1,43 @@
+<div>
+    <div class="tabs">
+        <div class="tab" ng-class="{active:lang === 'en'}" ng-click="setLang('en')">{{'English' | translate}}</div>
+        <div class="tab" ng-class="{active:lang === 'es'}" ng-click="setLang('es')">{{'Spanish' | translate}}</div>
+    </div>
+    <div class="layer">
+        <div class="graph">
+            <p>DATA TRANSFER</p>
+            <div class="content">
+                <svg width="100%" height="200px" viewBox="0 0 100 100"></svg>
+                <div class="center">
+                    <span class="first" ng-class="{waiting:!data}">{{data.files}} files</span>
+                    <span class="second" ng-class="{waiting:!data}">{{data.size}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="boxes">
+            <div class="box">
+                <span>audio</span>
+                <label ng-class="{waiting:!data}">{{data.audio}}%</label>
+            </div>
+            <div class="box">
+                <span>video</span>
+                <label ng-class="{waiting:!data}">{{data.video}}%</label>
+            </div>
+            <div class="box">
+                <span>{{'photo' | translate}}</span>
+                <label ng-class="{waiting:!data}">{{data.photo}}%</label>
+            </div>
+        </div>
+        <div class="actions">
+            <div class="action" ng-click="noYet()">
+                <span class="icon upload"></span> {{'UPLOAD FILES' | translate}}
+            </div>
+            <div class="action" ng-click="noYet()">
+                <span class="icon share"></span> {{'SHARE LINK' | translate}}
+            </div>
+            <div class="action" ng-click="noYet()">
+                <span class="icon backup"></span> {{'BACK UP' | translate}}
+            </div>
+        </div>
+    </div>
+</div>

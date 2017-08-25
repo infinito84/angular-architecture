@@ -1,0 +1,12 @@
+CACHE MANIFEST
+# {{version}}
+index.html
+{{version}}/{{module}}.js
+{{version}}/{{module}}.css
+{{cache}}
+
+NETWORK:
+*
+
+#FALLBACK:
+#/ fallback.html

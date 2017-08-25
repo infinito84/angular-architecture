@@ -1,0 +1,63 @@
+.icon{
+    background-image: url(/img/icons.png);
+
+    &.upload{
+        width: 40px;
+        height: 25px;
+        background-position: -30px -3px;
+    }
+
+    &.share{
+        width: 40px;
+        height: 25px;
+        background-position: -30px -28px;
+    }
+
+    &.backup{
+        width: 40px;
+        height: 25px;
+        background-position: -30px -52px;
+    }
+
+    &.views{
+        width: 30px;
+        height: 25px;
+        background-position: 0px 0px;
+        display: inline-block;
+        margin-right: 5px;
+        vertical-align: sub;
+    }
+
+    &.comments{
+        width: 30px;
+        height: 25px;
+        background-position: 0px -30px;
+        display: inline-block;
+        margin-right: 5px;
+        vertical-align: -webkit-baseline-middle;
+    }
+
+    &.likes{
+        width: 30px;
+        height: 25px;
+        background-position: 0px -50px;
+        display: inline-block;
+        margin-right: 5px;
+        vertical-align: sub;
+    }
+}
+
+*.active{
+    .icon{
+        &.views{
+            background-position: 0px -74px;
+            vertical-align: bottom;
+        }
+        &.comments{
+            background-position: 0px -103px;
+        }
+        &.likes{
+            background-position: 0px -123px;
+        }
+    }
+}

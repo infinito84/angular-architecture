@@ -1,0 +1,36 @@
+<div>
+    <div class="content">
+        <div class="field">
+            <label>{{'Contacts' | translate}}</label>
+            <ui-select multiple ng-model="data.contacts" theme="bootstrap" close-on-select="true" style="width: 100%;border:1px solid #f5f0ec">
+                <ui-select-match placeholder="{{'Add contacts' | translate}}">{{$item}}</ui-select-match>
+                <ui-select-choices repeat="email in emails | filter:$select.search">
+                    {{email}}
+                </ui-select-choices>
+            </ui-select>
+            <span class="label label-danger" ng-if="submit && !data.contacts.length">{{'Please, add some contact.' | translate}}</span>
+        </div>
+
+        <div class="field">
+            <label>{{'Subject' | translate}}</label>
+            <input ng-model="data.subject" placeholder="{{'You can add a subject' | translate}}" />
+            <span class="label label-danger" ng-if="submit && !data.subject">{{'Please, add a subject.' | translate}}</span>
+        </div>
+
+        <div class="field">
+            <label>{{'Message' | translate}}</label>
+            <textarea ng-model="data.message" placeholder="{{'Leave your message here' | translate}}"></textarea>
+            <span class="label label-danger" ng-if="submit && !data.message">{{'Please, add a message.' | translate}}</span>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="left">
+            <input name="copy" type="checkbox" ng-model="data.copy" />
+            <label class="icon" for="copy"></label> {{'Save a copy' | translate}}
+        </div>
+        <div class="right">
+            <button class="btn" ng-click="doSubmit()">{{'Send Mail' | translate}}</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "build.js",
+  "dependencies": {
+    "async": "^2.4.0",
+    "fs-extra": "^3.0.1",
+    "gulp": "^3.9.1",
+    "gulp-watch": "^4.3.11",
+    "mkdirp": "^0.5.1",
+    "node-notifier": "^5.1.2",
+    "node-sass": "^4.5.2",
+    "static-server": "^2.0.4",
+    "uglify-js": "^3.0.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node build.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git"
+  },
+  "author": "Sergio Andrés Ñustes",
+  "license": "ISC"
+}

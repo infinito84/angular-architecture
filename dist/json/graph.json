@@ -1,0 +1,13 @@
+{
+    "files" : "2,435",
+    "size" : "47Gb",
+    "audio" : 55,
+    "video" : 23,
+    "photo" : 17,
+    "graph" : [
+        {"n": 60, "color": "#4daf7c"},
+        {"n": 25, "color": "#f4572c"},
+        {"n": 10, "color": "#f1c84c"},
+        {"n": 5, "color": "#f5f0ec"}
+    ]
+}

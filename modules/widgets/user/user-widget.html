@@ -1,0 +1,25 @@
+<div>
+    <img ng-src="{{data.cover}}"/>
+    <div class="content">
+        <div class="left">
+            <div class="round">
+                <img ng-src="{{data.photo}}"/>
+            </div>
+        </div>
+        <div class="right">
+            <h3 ng-class="{waiting : !data}">{{data.name}}</h3>
+            <p ng-class="{waiting : !data}">{{data.description}}</p>
+        </div>
+    </div>
+    <div class="actions">
+        <div class="action" ng-class="{waiting : !data, active : view}" ng-click="doView()">
+            <span class="icon views"></span>{{data.views}}
+        </div>
+        <div class="action" ng-class="{waiting : !data, active : comment}" ng-click="doComment()">
+            <span class="icon comments"></span> {{data.comments}}
+        </div>
+        <div class="action" ng-class="{waiting : !data, active : like}" ng-click="doLike()">
+            <span class="icon likes"></span> {{data.likes}}
+        </div>
+    </div>
+</div>

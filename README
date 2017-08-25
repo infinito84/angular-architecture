@@ -1,0 +1,7 @@
+Install:
+
+	bower install
+    npm install
+    npm start
+
+Go to http://localhost:8484/

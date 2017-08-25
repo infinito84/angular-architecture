@@ -1,0 +1,41 @@
+<div>
+    <div class="graph">
+        <div class="rate">
+            <span class="first" ng-class="{waiting : !data}">
+                <span class="caret"></span> {{data.rate.first}}
+            </span>
+            <span class="second" ng-class="{waiting : !data}">{{data.rate.second}}</span>
+        </div>
+        <div class="bars">
+            <div class="bar" ng-repeat="el in data.bars" style="width:{{barWidth}}%;height:{{el.n*el.factor}}%;left:{{$index * (2+barWidth) + 1}}%;"></div>
+        </div>
+        <svg width="100%" height="75px" viewBox="0 0 100 100" preserveAspectRatio="none"></svg>
+    </div>
+    <div class="info">
+        <span class="date" ng-class="{waiting : !data}">{{'Today' | translate}} {{time | date:'h:mma'}}</span>
+        <p class="name" ng-class="{waiting : !data}">{{data.city.name}}</p>
+        <div class="boxes">
+            <div class="box">
+                <span class="first" ng-class="{waiting : !data}">{{data.info.sharesTraded}}</span>
+                <span class="second" ng-class="{waiting : !data}">{{'Shares Trade' | translate}}</span>
+            </div>
+            <div class="box">
+                <span class="first" ng-class="{waiting : !data}">{{data.info.marketCap}}</span>
+                <span class="second" ng-class="{waiting : !data}">{{'Market Cap' | translate}}</span>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="first">
+                <p>APPL</p>
+                <div>
+                    <div class="bar" ng-repeat="el in data.info.appl" style="width:{{barWidth2}}%;height:100%;left:{{$index * (2+barWidth2) + 1}}%;background-color:#f5f0ec;"></div>
+                    <div class="bar" ng-repeat="el in data.info.appl" style="width:{{barWidth2}}%;height:{{el.n*el.factor}}%;left:{{$index * (2+barWidth2) + 1}}%;background-color:{{el.color}};"></div>
+                </div>
+            </div>
+            <div class="second">
+                <p>{{'Yearly Change' | translate}}</p>
+                <div class="box" ng-class="{waiting : !data}">{{data.info.yearlyChange}}</div>
+            </div>
+        </div>
+    </div>
+</div>

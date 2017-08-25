@@ -1,0 +1,164 @@
+[ui-view=financial]{
+    &>div{
+        box-shadow: 0 0 20px $shadow1;
+    }
+
+    .graph {
+        position: relative;
+
+        .rate {
+            background-color: $green1;
+            color: $white1;
+            padding: 1em 2em;
+            min-height: 75px;
+
+            .first {
+                display: block;
+                font-size: 1.3em;
+                line-height: 1em;
+                position: relative;
+
+                .caret {
+                    width: 0;
+                    height: 0;
+                    border-left: 5px solid transparent;
+                    border-right: 5px solid transparent;
+                    border-top: 5px solid transparent;
+                    border-bottom: 5px solid $white1;
+                    position: absolute;
+                    bottom: 0;
+                    left: -15px;
+                }
+            }
+
+            .second {
+                color: $white2;
+                font-size: 0.8em;
+                display: inline-block;
+            }
+        }
+
+        .bars {
+            background-color: $green2;
+            min-height: 75px;
+            position: relative;
+
+            .bar {
+                position: absolute;
+                bottom: 0;
+                background-color: $green3;
+                transition: height 0.5s ease-in;
+                height: 0;
+            }
+        }
+
+        svg {
+            position: absolute;
+            top: 25%;
+
+            path {
+                stroke-dasharray: 1000;
+                stroke-dashoffset: 1000;
+                animation: dash 3s ease-in forwards;
+            }
+            @keyframes dash {
+                from {
+                    stroke-dashoffset: 1000;
+                }
+
+                to {
+                    stroke-dashoffset: 0;
+                }
+            }
+        }
+    }
+
+    .info {
+        padding: 1em 1em 1.5em;
+        background-color: $white1;
+
+        .date {
+            display: block;
+            color: $brown1;
+            font-size: 0.8em;
+        }
+
+        .name {
+            color: $brown2;
+            font-size: 1.2em;
+        }
+
+        .boxes {
+            display: flex;
+
+            .box {
+                display: block;
+                width: 50%;
+                background-color: $brown3;
+                font-size: 1em;
+                padding: 1em 0;
+                text-align: center;
+
+                &:first-child {
+                    border-right: 1px solid $white1;
+                }
+
+                &:last-child {
+                    border-left: 1px solid $white1;
+                }
+
+                .first {
+                    color: $brown2;
+                    font-size: 1.1em;
+                    display: block;
+                    font-weight: bold;
+                    line-height: 1em;
+                }
+
+                .second {
+                    color: $brown1;
+                    font-size: 0.8em;
+                    line-height: 1em;
+                }
+            }
+        }
+
+        .footer{
+            display: flex;
+            color: $brown1;
+            margin-top: 0.5em;
+
+            p{
+                font-size: 0.8em;
+                margin-bottom: 0.3em;
+            }
+
+            .first{
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+
+                &>div{
+                    position: relative;
+                    flex: 1;
+
+                    .bar{
+                        position: absolute;
+                        bottom: 0;
+                        transition: height 0.5s ease-in;
+                        height: 0;
+                    }
+                }
+            }
+
+            .second{
+                .box{
+                    color: $white1;
+                    background-color: $green2;
+                    padding: 0.6em 1em;
+                    border-radius: 0.2em;
+                }
+            }
+        }
+    }
+}
