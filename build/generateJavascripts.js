@@ -43,6 +43,8 @@ module.exports = function(modules, callback){
 					})
 					var file = './dist/'+ module + '/'+ modules[module].version + '/'+ module + '.js';
 					fs.writeFile(file, js, callback);
+					file = './dist/'+ module + '/fallback/'+ module + '.js';
+					fs.writeFile(file, js, function(){});
 				});
 			}
 		], callback)

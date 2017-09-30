@@ -1,6 +1,6 @@
 Install:
 
-	bower install
+    bower install
     npm install
     npm start
 

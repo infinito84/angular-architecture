@@ -13,10 +13,21 @@
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,600" rel="stylesheet">
 	</head>
 	<body ng-app="test">
-		<script>
-		var script = document.createElement('script');
-		script.setAttribute('src', 'current.js?'+ Date.now());
-		document.getElementsByTagName('head')[0].appendChild(script);
+		<script type="text/javascript">
+			var script = document.createElement('script');
+			window.scriptLoaded = false;
+			script.onload = function(){
+				window.scriptLoaded = true;
+			}
+			script.setAttribute('src', 'current.js?'+ Date.now());
+			document.getElementsByTagName('head')[0].appendChild(script);
+			setTimeout(function(){
+				if(!window.scriptLoaded){
+					var script2 = document.createElement('script');
+					script2.setAttribute('src', 'fallback.js');
+					document.getElementsByTagName('head')[0].appendChild(script2);
+				}
+			}, 2000);
 		</script>
 		<div growl></div>
 		<ui-view><b> &nbsp;Cargando...</b></ui-view>

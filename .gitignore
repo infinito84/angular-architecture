@@ -3,3 +3,4 @@ node_modules/
 modules/vendors
 dist/test/*
 dist/files/*
+npm-debug.log
