@@ -3,11 +3,9 @@ var async = require('async');
 var fs = require('fs');
 var watch = require('gulp-watch');
 var gulp = require('gulp');
-var staticServer = require('static-server');
 var notifier = require('node-notifier');
 
 var modules = config.modules;
-var logo = __dirname + '/dist/img/logo-ean.png';
 
 var process = function() {
     async.waterfall([
@@ -27,8 +25,7 @@ var process = function() {
         }).join(', ');
         notifier.notify({
             title: 'Se compilaron',
-            message: apps,
-            icon: logo,
+            message: apps
         });
     })
 }
@@ -36,16 +33,4 @@ var process = function() {
 watch(['modules/**/*', 'modules.js'], process);
 process();
 
-var server = new staticServer({
-    rootPath: './dist',
-    name: 'SergioGNU',
-    port: 8484
-});
-
-server.start(function() {
-	notifier.notify({
-		title: 'Impacta',
-		message: 'Server listening to: '+ server.port,
-		icon: logo,
-	});
-});
+require('./backend/index.js');

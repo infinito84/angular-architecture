@@ -5,13 +5,14 @@
   "main": "build.js",
   "dependencies": {
     "async": "^2.4.0",
+    "cors": "^2.8.4",
+    "express": "^4.16.1",
     "fs-extra": "^3.0.1",
     "gulp": "^3.9.1",
     "gulp-watch": "^4.3.11",
     "mkdirp": "^0.5.1",
     "node-notifier": "^5.1.2",
     "node-sass": "^4.5.2",
-    "static-server": "^2.0.4",
     "uglify-js": "^3.0.4"
   },
   "devDependencies": {},
