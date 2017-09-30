@@ -10,7 +10,14 @@ module.exports = function(modules, callback){
 			fs.readFile(file, function(err, data){
 				if(err) console.error(file);
 				if(file.indexOf('.css') !== -1) css += data.toString() + '\n\n';
-				if(file.indexOf('.scss') !== -1) scss += data.toString() + '\n\n';
+				if(file.indexOf('.scss') !== -1){
+					if(file.indexOf('_variables.scss') !== -1){
+						scss = data.toString() + '\n\n' + scss;
+					}
+					else{
+						scss += data.toString() + '\n\n';
+					}
+				}
 				callback(err);
 			})
 		}, function(err){
